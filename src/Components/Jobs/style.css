@@ -1,0 +1,24 @@
+.container-jobs form {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top:75px;
+  background: linear-gradient(
+      90.71deg,
+      rgba(169, 124, 196, 0.33) 1.08%,
+      rgba(117, 219, 255, 0.33) 100%
+    ),
+    linear-gradient(0deg, rgb(238, 234, 243), rgb(238, 234, 243));
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px;
+}
+
+.container-jobs form input{
+
+
+
+    margin: 1   px;
+
+    padding: 15px;
+}
+
