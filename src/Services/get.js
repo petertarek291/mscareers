@@ -6,5 +6,4 @@ axios
   .catch((err) => err);
 
 
-  console.log(postedJobs)
   export default postedJobs;

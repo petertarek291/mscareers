@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import postedJobs from "../../Services/get";
-import ChosenRole from "../../Moves/ChosenRole";
+import ChosenRole from "./ChosenRole";
 
 const Postedjobs = () => {
+  const [data,setData]=useState("")
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen((isOpen) => !isOpen);
@@ -10,7 +11,7 @@ const Postedjobs = () => {
   
   return (
     <>
-      {isOpen && <ChosenRole />}
+      {isOpen && <ChosenRole choosenRole={data} />}
       {isOpen && (
         <>
           <button
@@ -29,7 +30,10 @@ const Postedjobs = () => {
           <button
             className="p-1 mt-2 hover:bg-gray-100 text-left bg-white active:border-l-4 focus:border-l-2 focus:border-fuchsia-950 hover:border-l-2 hover:border-fuchsia-900 border-l-fuchsia-950"
             key={item.job_number}
-            onClick={toggle}
+            onClick={()=>{
+              toggle(isOpen)
+              setData(item.title)
+              }}
   
           >
             <h1>

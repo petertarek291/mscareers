@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import postedJobs from "../Services/get";
+import postedJobs from "../../Services/get";
 
-const ChosenRole = (choosenRole) => {
+const ChosenRole = (props) => {
   const data = [];
-  choosenRole = "2";
-
+let choosenRole = props.choosenRole;
   const x = postedJobs[0].find(({ title }) => {
     return title.toLowerCase().includes(choosenRole.toLowerCase());
   });
