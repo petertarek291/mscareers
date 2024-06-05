@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import postedJobs from "../../Services/get";
 
 const ChosenRole = (props) => {
   const data = [];
 let choosenRole = props.choosenRole;
-  const x = postedJobs[0].find(({ title }) => {
-    return title.toLowerCase().includes(choosenRole.toLowerCase());
+  const x = postedJobs[0].find(({ job_number }) => {
+    return job_number.toLowerCase().includes(choosenRole.toLowerCase());
   });
   if (x !== undefined) {
     data.push(x);
