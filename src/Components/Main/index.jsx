@@ -50,7 +50,7 @@ const Index = () => {
           </form>
         </div>
       )}
-      {isOpen && <Postedjobs searchedJob="digital"/>}
+      {isOpen && <Postedjobs searchedJob={inputSearch}/>}
     </>
   );
 };
