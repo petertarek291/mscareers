@@ -2,8 +2,8 @@ import React from "react";
 import postedJobs from "../../Services/get";
 
 const ChosenRole = (props) => {
+  const choosenRole=props.choosenRole;
   const data = [];
-let choosenRole = props.choosenRole;
   const x = postedJobs[0].find(({ job_number }) => {
     return job_number.toLowerCase().includes(choosenRole.toLowerCase());
   });
@@ -121,50 +121,50 @@ let choosenRole = props.choosenRole;
             </div>
           </div>
           <div className="h-0.5 w-full bg-gray-400"></div>
-          <h2 className="w-full bg-red-50 mt-2 p-5">Expriences</h2> 
+          <h2 className="w-full bg-red-50 mt-2 p-5">Expriences</h2>
           <div className="p-4 w-full">
             <label className="w-1/5">Last Employeer : </label>
             <div className="text-center p-4">
-            <span>1-</span><input
-              type="text"
-              placeholder="Enter Last Employeer Name..."
-              className="w-4/5 font-bold placeholder:text-black text-center m-2"
-              id="candidate_last_name"
-            />
-            <input
-              type="text"
-              className="w-4/5 font-bold placeholder:text-black text-center"
-              placeholder="Contact..."
-            />
-            <input
-              type="text"
-              className="w-4/5 font-bold placeholder:text-gray-600 text-center mt-1"
-              placeholder="if it possible enter your last title (Optional)"
-            />
+              <span>1-</span>
+              <input
+                type="text"
+                placeholder="Enter Last Employeer Name..."
+                className="w-4/5 font-bold placeholder:text-black text-center m-2"
+                id="candidate_last_name"
+              />
+              <input
+                type="text"
+                className="w-4/5 font-bold placeholder:text-black text-center"
+                placeholder="Contact..."
+              />
+              <input
+                type="text"
+                className="w-4/5 font-bold placeholder:text-gray-600 text-center mt-1"
+                placeholder="if it possible enter your last title (Optional)"
+              />
 
-            <div className="text-center p-4">
-            <span>2-</span><input
-              type="text"
-              placeholder="Enter Last Employeer Name..."
-              className="w-4/5 font-bold placeholder:text-black text-center m-2"
-              id="candidate_last_employeer_name"
-            />
-            <input
-              type="text"
-              className="w-4/5 font-bold placeholder:text-black text-center"
-              placeholder="Contact..."
-            /><br/>
-            
-            <input
-              type="text"
-              className="w-4/5 font-bold placeholder:text-gray-600 text-center mt-1"
-              placeholder="if it possible enter your last title (Optional)"
-            />
+              <div className="text-center p-4">
+                <span>2-</span>
+                <input
+                  type="text"
+                  placeholder="Enter Last Employeer Name..."
+                  className="w-4/5 font-bold placeholder:text-black text-center m-2"
+                  id="candidate_last_employeer_name"
+                />
+                <input
+                  type="text"
+                  className="w-4/5 font-bold placeholder:text-black text-center"
+                  placeholder="Contact..."
+                />
+                <br />
 
+                <input
+                  type="text"
+                  className="w-4/5 font-bold placeholder:text-gray-600 text-center mt-1"
+                  placeholder="if it possible enter your last title (Optional)"
+                />
+              </div>
             </div>
-
-            </div>
-            
           </div>
 
           <input

@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "../Main/index.css";
 import ImageMe from "../img/GCS_Home Page_Hero.png";
 
 import Postedjobs from "../Jobs/Postedjobs";
+
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+  const [inputSearch, setInputSearch] = useState("");
+  const inputRef = useRef();
+  function handleSubmit(event) {
+    setInputSearch(inputRef.current.value);
+
+    toggle(isOpen);
+    event.preventDefault();
+  }
 
   function toggle() {
     setIsOpen((isOpen) => !isOpen);
@@ -20,27 +28,29 @@ const Index = () => {
             Because impact matters
           </h1>
 
-          <form className="absolute ml-5 top-1/2 mt-10 left-5 w-2/3">
+          <form
+            className="absolute ml-5 top-1/2 mt-10 left-5 w-2/3"
+            onSubmit={handleSubmit}
+          >
             <input
               type="text"
               className="p-5 h-12 w-1/2"
               placeholder="Search by job title,ID or keyword"
-  
+              ref={inputRef}
             />
-            <input
+            <button
               type="submit"
-              onClick={() =>{
-                 toggle(!isOpen)
-                 
-                 }}
               className="m-0.5 w-1/4 h-12 bg-purple-900  text-white"
-              value="Find All Jobs"
-            />
-
+              onClick={() => {
+                return <Postedjobs searchedJob={inputSearch} />;
+              }}
+            >
+              Find Jubs
+            </button>
           </form>
         </div>
       )}
-      {isOpen && <Postedjobs />}
+      {isOpen && <Postedjobs searchedJob="digital"/>}
     </>
   );
 };
