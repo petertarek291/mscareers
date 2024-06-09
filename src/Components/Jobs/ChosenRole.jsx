@@ -13,37 +13,42 @@ const ChosenRole = (props) => {
 
   return (
     <div className="flex w-full">
-      <div className="left-side  vh-96 p-5 w-1/2 text-left">
+      <div className="left-side  vh-96 p-5 w-1/2 text-left z-50 ">
         {data.map((item, i) => (
           <div key={i} className="p-1">
-            <h1 className="font-bold m-2 p-2 text-center">{item.title}</h1>
-            <h2>
+            <h1 className="font-bold  m-2 p-2 text-center underline ">{item.title}</h1>
+            
+            <h2 className="m-3">
               <span className="font-bold">Profession</span> : {item.profession}
             </h2>
-            <h2>
+            <div className="w-full  text-center h-0.5 bg-gray-500"></div>
+            <h2 className="m-3">
               <span className="font-bold"> Date Posted </span>
               {item.date_posted}
             </h2>
-            <p>
+            <div className="w-full text-center h-0.5 bg-gray-500"></div>
+            <p className="m-3">
               <span className="font-bold">Overview</span> : {item.Overview}
             </p>
-            <p>
+            <div className="w-full  text-center h-0.5 bg-gray-500"></div>
+            <p className="m-3">
               <span className="font-bold">Responsibilities </span>
               {item.Responsibilities}
             </p>
+            <div className="w-full  text-center h-0.5 bg-gray-500"></div>
             <p className="font-bold">Job Number : {item.job_number}</p>
           </div>
         ))}
       </div>
-      <div className="right-side shadow-inner bg-slate-50 vh-96 p-5 w-2/3">
+      <div className="right-side shadow-inner bg-slate-50  p-5 w-2/3 ">
         <form className="items-start p-3 flex flex-col w-full m-auto">
-          <h2 className="w-full bg-red-50 mt-2 p-5">Personal Info</h2>
+          <h2 className="w-full bg-red-50 text-center mt-2 p-5">Personal Info</h2>
           <div className="p-2 w-full">
-            <label className="w-1/5 font-thin">First Name </label>
+            <label className="w-1/5">First Name </label>
             <input
               type="text"
-              className="w-4/5  font-bold placeholder:text-black text-center bg-auto"
-              placeholder="Enter First Name..."
+              className="w-4/5  font-semibold text-center bg-auto placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+              placeholder="Enter first name..."
               id="candidate_name"
             />
           </div>
@@ -51,8 +56,8 @@ const ChosenRole = (props) => {
             <label className="w-1/5">Middle Name : </label>
             <input
               type="text"
-              placeholder="Enter Last Name..."
-              className="w-4/5 font-bold placeholder:text-black text-center"
+              placeholder="Enter middle name..."
+              className="w-4/5 font-semibold text-center placeholder:text-start  placeholder:p-1 placeholder:font-thin"
               id="candidate_middle_name"
             />
           </div>
@@ -60,8 +65,8 @@ const ChosenRole = (props) => {
             <label className="w-1/5">Last Name : </label>
             <input
               type="text"
-              placeholder="Enter Last Name..."
-              className="w-4/5 font-bold placeholder:text-black text-center"
+              placeholder="Enter last name..."
+              className="w-4/5 font-semibold  text-center placeholder:text-start  placeholder:p-1 placeholder:font-thin"
               id="candidate_last_name"
             />
           </div>
@@ -70,8 +75,8 @@ const ChosenRole = (props) => {
             <label className="w-1/5">E-mail : </label>
             <input
               type="email"
-              placeholder="Enter Email.... ex: username@Microsoft.com"
-              className="w-4/5 font-bold placeholder:text-black text-center"
+              placeholder="ex: username@Microsoft.com"
+              className="w-4/5 font-semibold  text-center placeholder:text-start  placeholder:p-1 placeholder:font-thin"
               id="candidate_email"
             />
           </div>
@@ -79,23 +84,23 @@ const ChosenRole = (props) => {
             <label className="w-1/5">Mobile : </label>
             <input
               type="text"
-              className="w-4/5 font-bold placeholder:text-black text-center"
+              className="w-4/5 font-semibold text-center placeholder:text-start  placeholder:p-1 placeholder:font-thin"
               placeholder="ex:0020 "
-              id="candidate_cv"
+              id="candidate_cmobile"
             />
           </div>
           <div className="p-2 w-full">
-            <label className="w-1/5">Upload CV</label>
-            <input type="file" className="w-4/5 text-red-400 text-center" />
+            <label className="w-1/5 mr-6">Upload CV</label>
+            <input type="file" className="w-4/5 text-gray-400 text-center" />
           </div>
           <div className="h-0.5 w-full bg-gray-400"></div>
-          <h2 className="w-full bg-red-50  mt-2 p-5">Education and Courses</h2>
+          <h2 className="w-full bg-red-50  mt-2 p-5 text-center">Education and Courses</h2>
           <div className="p-2 w-full">
             <label className="w-1/5">Education : </label>
             <input
               type="text"
-              className="w-4/5 font-bold placeholder:text-black text-center p-2 bg-none"
-              placeholder="Enter your highest Education "
+              className="w-4/5 font-semibold text-center p-2 bg-none placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+              placeholder="Enter your highest education "
               id="candidate_edu"
             />
           </div>
@@ -104,73 +109,74 @@ const ChosenRole = (props) => {
             <div className="text-center p-4">
               <input
                 type="text"
-                className="w-4/5 font-bold placeholder:text-black text-center p-2 bg-none"
-                placeholder="Enter your highest Courses"
+                className="w-4/5 font-semibold text-center p-2 bg-none placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+                placeholder="Enter your courses"
                 id="candidate_extra_edu"
               />
               <input
                 type="text"
-                className="w-4/5 font-bold placeholder:text-black text-center p-2 bg-none"
+                className="w-4/5 font-semibold text-center p-2 bg-none placeholder:text-start  placeholder:p-1 placeholder:font-thin"
                 id="candidate_extra_edu"
               />
               <input
                 type="text"
-                className="w-4/5 font-bold placeholder:text-black text-center p-2 bg-none"
+                className="w-4/5 font-semibold text-center p-2 bg-none"
                 id="candidate_extra_edu"
               />
             </div>
           </div>
           <div className="h-0.5 w-full bg-gray-400"></div>
-          <h2 className="w-full bg-red-50 mt-2 p-5">Expriences</h2>
+          <h2 className="w-full bg-red-50 mt-2 p-5 text-center">Expriences</h2>
           <div className="p-4 w-full">
             <label className="w-1/5">Last Employeer : </label>
             <div className="text-center p-4">
-              <span>1-</span>
+              
               <input
                 type="text"
-                placeholder="Enter Last Employeer Name..."
-                className="w-4/5 font-bold placeholder:text-black text-center m-2"
+                placeholder="Enter last employeer name..."
+                className="w-4/5 font-semibold text-center m-2 placeholder:text-start  placeholder:p-1 placeholder:font-thin"
                 id="candidate_last_name"
               />
               <input
                 type="text"
-                className="w-4/5 font-bold placeholder:text-black text-center"
-                placeholder="Contact..."
+                className="w-4/5 font-semibold text-center placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+                placeholder="Email or mobile number"
               />
               <input
                 type="text"
-                className="w-4/5 font-bold placeholder:text-gray-600 text-center mt-1"
-                placeholder="if it possible enter your last title (Optional)"
+                className="w-4/5 font-semibold text-center mt-1 placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+                placeholder="Last title (Optional)"
               />
 
-              <div className="text-center p-4">
-                <span>2-</span>
-                <input
-                  type="text"
-                  placeholder="Enter Last Employeer Name..."
-                  className="w-4/5 font-bold placeholder:text-black text-center m-2"
-                  id="candidate_last_employeer_name"
-                />
-                <input
-                  type="text"
-                  className="w-4/5 font-bold placeholder:text-black text-center"
-                  placeholder="Contact..."
-                />
-                <br />
-
-                <input
-                  type="text"
-                  className="w-4/5 font-bold placeholder:text-gray-600 text-center mt-1"
-                  placeholder="if it possible enter your last title (Optional)"
-                />
-              </div>
             </div>
+
+            <div className="text-center p-4">
+              
+              <input
+                type="text"
+                placeholder="Enter last employeer name..."
+                className="w-4/5 font-semibold text-center m-2 placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+                id="candidate_last_name"
+              />
+              <input
+                type="text"
+                className="w-4/5 font-semibold text-center placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+                placeholder="Email or mobile number"
+              />
+              <input
+                type="text"
+                className="w-4/5 font-semibold text-center mt-1 placeholder:text-start  placeholder:p-1 placeholder:font-thin"
+                placeholder="Last title (Optional)"
+              />
+
+            </div>
+          
           </div>
 
           <input
             type="submit"
             value="Save and Continue"
-            className="w-1/2 bg-fuchsia-950 text-white py-1"
+            className="w-1/2 bg-fuchsia-950 text-white py-1 m-auto"
           />
         </form>
       </div>

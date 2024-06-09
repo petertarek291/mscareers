@@ -45,7 +45,7 @@ const Index = () => {
                 return <Postedjobs searchedJob={inputSearch} />;
               }}
             >
-              Find Jubs
+              Find Jobs
             </button>
           </form>
         </div>
