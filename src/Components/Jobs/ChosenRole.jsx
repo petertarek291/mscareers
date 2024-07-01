@@ -1,40 +1,45 @@
+
 import React from "react";
-import service from "../../Services/get";
-import { useSearchParams } from "react-router-dom";
+import postedJobs from "../../Services/get";
+
 const ChosenRole = (props) => {
-  const selectedJob =props.selectedJob;
-  // const [searchParams] = useSearchParams();
+  const choosenRole=props.choosenRole;
+  const data = [];
+  const x = postedJobs[0].find(({ job_number }) => {
+    return job_number.toLowerCase().includes(choosenRole.toLowerCase());
+  });
+  if (x !== undefined) {
+    data.push(x);
+  }
 
-
-    
   return (
     <div className="flex w-full">
       <div className="left-side  vh-96 p-5 w-1/2 text-left z-50 ">
-        {
-          <div className="p-1">
-            <h1 className="font-bold  m-2 p-2 text-center underline ">{selectedJob.title}</h1>
+        {data.map((item, i) => (
+          <div key={i} className="p-1">
+            <h1 className="font-bold  m-2 p-2 text-center underline ">{item.title}</h1>
             
             <h2 className="m-3">
-              <span className="font-bold">Profession</span> : {selectedJob.profession}
+              <span className="font-bold">Profession</span> : {item.profession}
             </h2>
             <div className="w-full  text-center h-0.5 bg-gray-500"></div>
             <h2 className="m-3">
               <span className="font-bold"> Date Posted </span>
-              {selectedJob.date_posted}
+              {item.date_posted}
             </h2>
             <div className="w-full text-center h-0.5 bg-gray-500"></div>
             <p className="m-3">
-              <span className="font-bold">Overview</span> : {selectedJob.Overview}
+              <span className="font-bold">Overview</span> : {item.Overview}
             </p>
             <div className="w-full  text-center h-0.5 bg-gray-500"></div>
             <p className="m-3">
               <span className="font-bold">Responsibilities </span>
-              {selectedJob.Responsibilities}
+              {item.Responsibilities}
             </p>
             <div className="w-full  text-center h-0.5 bg-gray-500"></div>
-            <p className="font-bold">Job Number : {selectedJob.job_number}</p>
+            <p className="font-bold">Job Number : {item.job_number}</p>
           </div>
-        }
+        ))}
       </div>
       <div className="right-side shadow-inner bg-slate-50  p-5 w-2/3 ">
         <form className="items-start p-3 flex flex-col w-full m-auto">

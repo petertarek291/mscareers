@@ -30,14 +30,7 @@ function App() {
             </section>
           }
         />
-        {<Route
-          path="/selectedJob"
-          element={
-            <section className="h-48 absolute  w-full top-14 left-1">
-              {selectedJob&&<ChosenRole selectedJob={selectedJob}  />}
-            </section>
-          }
-        />}
+        
       </Routes>
     </>
   );
