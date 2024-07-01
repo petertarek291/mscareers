@@ -16,7 +16,7 @@ const Index = () => {
         <div className=" border-r-black border-r-2 my-0 h-6 pb-1"></div>
         <div className="  mx-3 ">
 
-            <a href="https://careers.microsoft.com/v2/global/en/home.html" className="cursur-pointer">
+            <a href="#" className="cursur-pointer">
             <span className="dev2 h-10 mx-3 font-semibold hover:underline flex-auto">
             Careers
         </span>
